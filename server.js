@@ -49,7 +49,7 @@ if (process.env.NODE_ENV === "production") {
 // app.get("/", (req, res) => res.send("Hello!"));
 
 // Define any API routes before this runs
-app.get("/:id", (request, response) => {
+app.get("*", (request, response) => {
     Habit.find({})
         .then(function (data) {
             response.status(200).json(data);
