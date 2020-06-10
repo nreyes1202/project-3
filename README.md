@@ -27,7 +27,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Mongoose
 * MongoDB
 * React-Router-Dom
-* React-Alert
+* Axios
+* BCryptjs
+* Concurrently
+* Connect-Mongo
+* Express
+* Express-Session
+* Nodemon
+* Passport
+* Passport-Local
+* Passport-Local-Mongoose
 
 ## Details of App and Challenges
 

@@ -26,9 +26,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 // // Express Session
 // app.use(
@@ -49,7 +49,7 @@ app.use(express.json());
 // app.get("/", (req, res) => res.send("Hello!"));
 
 // Define any API routes before this runs
-app.get("*", (request, response) => {
+app.get("/:id", (request, response) => {
     Habit.find({})
         .then(function (data) {
             response.status(200).json(data);
@@ -59,7 +59,7 @@ app.get("*", (request, response) => {
         });
 });
 
-app.delete("*", (request, response) => {
+app.delete("/:id", (request, response) => {
     const mongoID = request.params.id;
     ToDo.remove({
         _id: mongoID,
@@ -113,15 +113,16 @@ app.get('/api/sortedHabits/:id', function(req,res){
     `)
 
     Habit.find({_id: req.params.id })
-        .limit(10)
-        .sort('score')
+        // .limit(10)
+        // .sort('score')
         .then(data => {
             res.json(data)
-            console.log(data)
+            console.log('get sorted Habits: ', data)
         })
         .catch(function () {
             response.status(404).end("Can not find and sort list!");
         });
+    
 });
 
 app.listen(PORT, () => {
