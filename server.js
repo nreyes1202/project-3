@@ -11,14 +11,28 @@ const mongoose = require('mongoose');
 const Habit = require('./models/Habit');    
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/HabitTracker", {
-    useNewUrlParser: true
-})
-    .then(function(){
-        console.log('Mongoose Connected')
-    })
-    .catch(err => console.log(err));
+// mongoose.connect("mongodb://localhost:27017/HabitTracker", {
+//     useNewUrlParser: true
+// })
+//     .then(function(){
+//         console.log('Mongoose Connected')
+//     })
+//     .catch(err => console.log(err));
 
+
+
+// MONGO setup ===
+// =============================================================
+// IF NODE_ENV exists then setup for Heroku, if not just use local
+let MONGODB_URI = process.env.NODE_ENV
+    ? process.env.MONGODB_URI
+    : "mongodb://localhost/HabitTracker";
+
+mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+// =============================================================
 
 
 // Define middleware here
