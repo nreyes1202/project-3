@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 // IF NODE_ENV exists then setup for Heroku, if not just use local
 let MONGODB_URI = process.env.NODE_ENV
     ? process.env.MONGODB_URI
-    : "mongodb://localhost/HabitTracker";
+    : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
