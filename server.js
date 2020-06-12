@@ -14,11 +14,12 @@ const mongoose = require('mongoose');
 
 const mongoURI = 'mongodb://heroku_bwqsgrdb:rAtYGyjekK3fa@ds141490.mlab.com:41490/heroku_bwqsgrdb';
 
-mongoose.connect (
-mongoURI,
-{
-useMongoClient:true
-};
+mongoose.connect(
+    mongoURI,
+    {
+    useMongoClient: true
+    }
+    );
 
 
 // const passport = require("./client/src/passport/setup");
