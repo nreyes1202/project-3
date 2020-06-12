@@ -40,18 +40,14 @@
   "bugs": {
     "url": "https://github.com/swazeyjessup/project-3/issues"
   },
-  
-    "_id": "heroku_bwqsgrdb.heroku_bwqsgrdb",
-    "user": "heroku_bwqsgrdb",
-    "db": "heroku_bwqsgrdb",
-    "roles": [
-        {
-            "role": "dbOwner",
-            "db": "heroku_bwqsgrdb"
-        }
-    ],
-
-  "homepage": "https://github.com/swazeyjessup/project-3#readme"
-  
-
+  "user": "heroku_bwqsgrdb",
+  "db": "heroku_bwqsgrdb",
+  "roles": [
+    {
+      "role": "dbOwner",
+      "db": "heroku_bwqsgrdb"
+    }
+  ],
+  "homepage": "https://github.com/swazeyjessup/project-3#readme",
+  "keywords": []
 }
