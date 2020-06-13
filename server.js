@@ -1,7 +1,9 @@
 const express = require("express");
+const mongoose = require('mongoose');
+const path = require('path');
+
 const PORT = process.env.PORT || 3030;
 const app = express();
-const mongoose = require('mongoose');
 
 const Habit = require('./models/Habit');
 
@@ -129,14 +131,16 @@ app.get("/HabitTracker", (request, response) => {
 });
 
 function sendIndex(request, response) {
-    response.sendFile('./client/build/index.html');
+    const indexPath = path.join(__dirname, 'client', 'build', 'index.html');
+
+    response.sendFile(indexPath);
 }
 
 app
-    .get("Form", sendIndex)
-    .get("Habits", sendIndex)
-    .get("Leaderboard", sendIndex)
-    .get("Login", sendIndex);
+    .get("/Form", sendIndex)
+    .get("/Habits", sendIndex)
+    .get("/Leaderboard", sendIndex)
+    .get("/Login", sendIndex);
 
 //*************************************************************************************** */
 app.listen(PORT, () => {
