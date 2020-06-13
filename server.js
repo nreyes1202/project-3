@@ -98,7 +98,7 @@ app.put('/api/updateScore/:id', function (req, res) {
 
 })
 
-app.get('/api/sortedHabits/:id', function (req, res) {
+app.get('/api/sortedHabits', function (req, res) {
     console.log(`
             sorted get route /api/
             
@@ -106,7 +106,7 @@ app.get('/api/sortedHabits/:id', function (req, res) {
             req.params: ${req.params.id}
             `)
 
-    Habit.find({ _id: req.params.id })
+    Habit.find({})
         // .limit(10)
         // .sort('score')
         .then(data => {
