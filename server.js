@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 // IF NODE_ENV exists then setup for Heroku, if not just use local
 let MONGODB_URI = process.env.NODE_ENV
     ? process.env.MONGODB_URI
-    : "mongodb://localhost/HabitTracker";
+    : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -28,9 +28,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+app.use(express.static("client/build"));
+// }
 
 // // Express Session
 // app.use(
@@ -127,6 +127,17 @@ app.get("/HabitTracker", (request, response) => {
             response.status(404).end("404!! Information BLACK HOLE!!");
         });
 });
+
+function sendIndex(request, response) {
+    response.sendFile('./client/build/index.html');
+}
+
+app
+    .get("Form", sendIndex)
+    .get("Habits", sendIndex)
+    .get("Leaderboard", sendIndex)
+    .get("Login", sendIndex);
+
 //*************************************************************************************** */
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
