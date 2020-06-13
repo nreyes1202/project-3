@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 // IF NODE_ENV exists then setup for Heroku, if not just use local
 let MONGODB_URI = process.env.NODE_ENV
     ? process.env.MONGODB_URI
-    : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
+    : "mongodb://localhost/HabitTracker";
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -118,7 +118,7 @@ app.get('/api/sortedHabits/:id', function (req, res) {
 });
 
 // ****************** Define any API routes before this runs *****************************
-app.get("*", (request, response) => {
+app.get("/HabitTracker", (request, response) => {
     Habit.find({})
         .then(function (data) {
             response.status(200).json(data);
