@@ -52,9 +52,13 @@ Logic is used to sort the habits list for the leaderboard after the database cal
 
 ## Acknowledgments
 
-### Thanks go to the Teacher and Teachers Aids of our bootcamp in helping us trouble shoot the different callenges we faced.
+### Hat tips to...
 
+* Jacob Stanger -  *Trouble Shooting Help* - [JCStang](https://github.com/jcstang)
 * Chris Stead -  *Trouble Shooting Help* - [CMStead](https://github.com/cmstead)
+
+### Thanks go to the Teachers Aids of our bootcamp in helping us trouble shoot the different callenges we faced.
+
 * Kurt Lehnardt -  *Trouble Shooting Help* - [KurtLehnardt](https://github.com/KurtLehnardt)
 * Mike Rivera -  *Trouble Shooting Help* - [DevMike42](https://github.com/DevMike42)
 

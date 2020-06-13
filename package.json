@@ -14,6 +14,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "http-proxy-middleware": "^1.0.4",
+    "mongodb": "^3.5.9",
+    "mongodb-shell": "^1.0.1",
     "mongoose": "^5.9.16",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
@@ -40,5 +42,14 @@
   "bugs": {
     "url": "https://github.com/swazeyjessup/project-3/issues"
   },
-  "homepage": "https://github.com/swazeyjessup/project-3#readme"
+  "user": "heroku_bwqsgrdb",
+  "db": "heroku_bwqsgrdb",
+  "roles": [
+    {
+      "role": "dbOwner",
+      "db": "heroku_bwqsgrdb"
+    }
+  ],
+  "homepage": "https://github.com/swazeyjessup/project-3#readme",
+  "keywords": []
 }
